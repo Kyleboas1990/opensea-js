@@ -13,7 +13,9 @@
     "build": "npm run lint && tsc",
     "docs": "npm run docsHtml",
     "docsHtml": "./node_modules/.bin/typedoc --target ES5 --exclude src/abi --excludePrivate --out ./docs --ignoreCompilerErrors --mode file",
-    "docsMarkdown": "./node_modules/.bin/typedoc --theme markdown --target ES5 --exclude src/abi --excludePrivate --out ./docs_markdown --ignoreCompilerErrors --mode file"
+    "docsMarkdown": "./node_modules/.bin/typedoc --theme markdown --target ES5 --exclude src/abi --excludePrivate --out ./docs_markdown --ignoreCompilerErrors --mode file",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -48,9 +50,10 @@
     "lodash": "^4.17.4",
     "query-string": "^6.11.1",
     "web3": "0.20.7",
-    "webpack": "^3.10.0",
+    "webpack": "^4.26.0",
     "wyvern-js": "git+https://github.com/ProjectOpenSea/wyvern-js.git#v3.2.1",
-    "wyvern-schemas": "git+https://github.com/ProjectOpenSea/wyvern-schemas.git#v0.13.1"
+    "wyvern-schemas": "git+https://github.com/ProjectOpenSea/wyvern-schemas.git#v0.13.1",
+    "@snyk/protect": "latest"
   },
   "husky": {
     "hooks": {
@@ -77,5 +80,6 @@
     "typescript": "^4.3.5",
     "typescript-eslint-parser": "^16.0.0",
     "web3-typescript-typings": "^0.9.3"
-  }
+  },
+  "snyk": true
 }
